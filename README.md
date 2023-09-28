@@ -73,7 +73,11 @@ The primary objective is to create a regression model capable of accurately esti
 - Object (string): 3 columns
 
 ## Modeling and Evaluation
-...
+they stakeholder asked to build a model that's  predict whether the customer will leave tip or not but that's not ethically correct and could harm the business ! Why ? lets take for example :
+
+- Drivers who didn't receive tips will probably be upset that the app told them a customer would leave a tip. If it happened often, drivers might not trust the app. Drivers are unlikely to pick up people who are predicted to not leave tips. Customers will have difficulty finding a taxi that will pick them up, and might get angry at the taxi company. Even when the model is correct, people who can't afford to tip will find it more difficult to get taxis, which limits the accessibility of taxi service to those who pay extra.
+
+**We can overtake this by building a model thats predict people who are particularly generous—those who will tip 20% or more**
 
 ## Conclusion
 ...
