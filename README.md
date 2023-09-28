@@ -77,7 +77,21 @@ they stakeholder asked to build a model that's  predict whether the customer wil
 
 - Drivers who didn't receive tips will probably be upset that the app told them a customer would leave a tip. If it happened often, drivers might not trust the app. Drivers are unlikely to pick up people who are predicted to not leave tips. Customers will have difficulty finding a taxi that will pick them up, and might get angry at the taxi company. Even when the model is correct, people who can't afford to tip will find it more difficult to get taxis, which limits the accessibility of taxi service to those who pay extra.
 
-**We can overtake this by building a model thats predict people who are particularly generous—those who will tip 20% or more**
+- We can overtake this by building a model thats predict people who are particularly generous—those who will tip 20% or more.
+
+Random forest and XGBoost used for modling and selects the best performance model to test the data.
+
+### confusion_matrix for random_forest model: 
+
+![](./Images/RF.png)
+
+### confusion_matrix for random_forest model: 
+
+![](./Images/feature_importances.png)
+
+- Random forest F1 Score : 0.728442.
+- XGBoost : 0.697756.
 
 ## Conclusion
-...
+this is model performs acceptably. Its F1 score was 0.728442 and it had an overall accuracy of 0.693826. It correctly identified ~78% of the actual responders in the test set, which is 48% better than a random guess. It may be worthwhile to test the model with a select group of taxi drivers to get feedback.
+There are almost always additional features that can be engineered, but hopefully the most obvious ones were generated during the first round of modeling. In our case, we could try creating three new columns that indicate if the trip distance is short, medium, or far. We could also engineer a column that gives a ratio that represents (the amount of money from the fare amount to the nearest higher multiple of $5) / fare amount. For example, if the fare were $12, the value in this column would be 0.25, because $12 to the nearest higher multiple of $5 ($15) is $3, and $3 divided by $12 is 0.25. The intuition for this feature is that people might be likely to simply round up their tip, so journeys with fares with values just under a multiple of $5 may have lower tip percentages than those with fare values just over a multiple of $5. We could also do the same thing for fares to the nearest $10.
